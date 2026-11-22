@@ -1,11 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Semantica</title>
+    <title>Web Semántica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6c280 ;
+        }
+        h1 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2.5rem;
+            color: #882c02;
+            margin: 0 0 8px 0;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #882c02;
+        }
+        h2 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.6rem;
+            color: #5c1d01;
+            background-color: #f3bb72;
+            border-left: 6px solid #882c02;
+            padding: 10px 15px;
+            border-radius: 0 6px 6px 0;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.2rem;
+            color: #882c02;
+            margin-top: 0;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #dca963;
+            padding-bottom: 4px;
+        }
+        header {
+            border-bottom: 2px solid #333;
+            background-color: #f3bb72;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        header p {
+            font-size: 1.15rem;
+            color: #5c1d01;
+            font-style: italic;
+            margin: 5px 0 15px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0 5px 0;
+        }
+        /* Solo le pone estilo al elemento anidado, es decir a las etiquetas li, dentro de ul y a su vez dentro de nav */
+        nav ul li {
+            display: inline;
+            margin: 5px 6px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #5c1d01;
+            background-color: #faeccf;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 2px solid #882c02;
+            border-radius: 20px;
+            transition: 0.2s;   
+        }
+        /* :hover es una pseudo-clase que se aplica cuando el usuario pasa el mouse sobre el elemento */
+        nav a:hover {
+            background-color: #882c02;
+            color: #faeccf;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 40px;
+            background-color: #f5ddb2;
+        }
+        main p {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #2c1808;
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+        footer {
+            border-top: 2px solid #333;
+            background-color: #f3bb72;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            font-size: 0.95rem;
+            color: #3d2207;
+            margin: 0;
+            font-weight: bold;
+        }
+        /* Clase para resaltar texto en negrita */
+        .bold {
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #faeccf;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+        }
+        /* Al usar coma no aplica estilo al anidado, si no a las etiquetas en global */
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f3bb72;
+            color: #882c02;
+            font-size: 1.05rem;
+        }
+        article {
+            background-color: #faeccf;
+            border-left: 5px solid #612205;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+        }
+        article p, aside p {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Web Semántica en HTML</h1>
+        <p>Estructura para navegadores, buscadores, etc.</p>
+        
+        <nav>
+            <ul>
+                <li><a href="#nav1">1. ¿Qué es?</a></li>
+                <li><a href="#nav2">2. Etiquetas de estructura</a></li>
+                <li><a href="#nav3">3. Etiquetas de contenido</a></li>
+                <li><a href="#nav4">4. Semántica vs div</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="nav1">
+            <h2>1. ¿Qué es la Web Semántica?</h2>
+            <p>
+                Es el uso de etiquetas HTML que aportan significado y contexto sobre el contenido que encierran, en lugar de definir solo cómo se ve en pantalla.                
+            </p>
+            <h3>¿Para quién es importante?</h3>
+            <ul>
+                <li><span class="bold">Navegadores y buscadores (SEO):</span> Entienden qué parte es el contenido principal y mejoran el posicionamiento.</li>
+                <li><span class="bold">Accesibilidad:</span> Los lectores de pantalla permiten saltar directamente al menú o al texto principal.</li>
+                <li><span class="bold">Desarrolladores:</span> El código es más limpio, legible y fácil de mantener.</li>
+            </ul>
+        </section>
+        <section id="nav2">
+            <h2>2. Etiquetas de estructura</h2>
+            <article>
+                <h3>header (Cabecera)</h3>
+                <p>
+                    Contiene la introducción de la página o de una sección. Suele incluir el título principal (h1), el logotipo, una breve descripción o el menú.
+                </p>
+            </article>
+            <article>
+                <h3>nav (Navegación)</h3>
+                <p>
+                    Agrupa los enlaces principales de navegación del sitio (como el menú superior o índices). No todos los enlaces de la web van aquí, solo los de navegación principal.
+                </p>
+            </article>
+            <article>
+                <h3>main (Contenido principal)</h3>
+                <p>
+                    Envuelve el contenido central y único de la página. Solo puede haber un "main" visible por página y no debe incluir elementos repetitivos como el menú o el pie de página.
+                </p>
+            </article>
+            <article>
+                <h3>footer (Pie de página)</h3>
+                <p>
+                    Es el cierre de la página o de una sección. Suele incluir información de autoría, derechos de autor (copyright), enlaces legales o datos de contacto.
+                </p>
+            </article>
+        </section>
+
+        <section id="nav3">
+            <h2>3. Etiquetas de contenido</h2>
+            <article>
+                <h3>section (Sección)</h3>
+                <p>
+                    Agrupa contenido relacionado bajo un mismo tema o capítulo. Por buena práctica, siempre debe llevar un encabezado (h2, h3...) que indique de qué trata.
+                </p>
+            </article>
+            <article>
+                <h3>article (Artículo)</h3>
+                <p>
+                    Representa un bloque de contenido autónomo que tiene sentido por sí mismo y podría distribuirse de forma independiente (una noticia, una entrada de blog o la ficha de un producto).
+                </p>
+            </article>
+            <article>
+                <h3>aside (Contenido adicional)</h3>
+                <p>
+                    Contiene información complementaria que no es esencial para entender el contenido principal. Suele incluir notas al pie, enlaces relacionados o publicidad.
+                </p>
+            </article>
+        </section>
+        <section id="nav4">
+            <h2>4. Semántica vs div</h2>
+            <p>
+                Antes de HTML5, toda la estructura de una web se construía usando únicamente cajas genéricas (div). A este exceso de cajas sin significado real se le conoce como "sopa de divs".
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Criterio</th>
+                        <th>Con div (No semántico)</th>
+                        <th>Con etiquetas semánticas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bold">Significado</td>
+                        <td>Ninguno, es solo una caja invisible para diseño.</td>
+                        <td>Indica exactamente qué función cumple cada bloque.</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Accesibilidad</td>
+                        <td>Los lectores de pantalla no saben dónde empieza el menú o el texto.</td>
+                        <td>Permite saltar directamente al menú (nav) o al contenido (main).</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">SEO (Buscadores)</td>
+                        <td>Google no distingue qué parte del texto es la más importante.</td>
+                        <td>Identifica qué es contenido principal (main) y qué es secundario (aside).</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Mantenimiento</td>
+                        <td>Difícil de leer en proyectos grandes por tener demasiados div seguidos.</td>
+                        <td>Código más limpio, ordenado y fácil de entender.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <aside>
+                <h3>¿Entonces nunca se usa div?</h3>
+                <p>
+                    Sí se usa, pero solo como contenedor genérico para aplicar estilos y ordenar elementos.
+                </p>
+            </aside>
+        </section>
+    </main>
+    <footer>
+        <p> &copy; Exposición Web Semántica - Ayoze, Andre, Aimar y Samuel</p>
+    </footer>
 </body>
 </html>
